@@ -27,6 +27,8 @@ export const Home = () => {
         <Slideshow/>
         <h1 style={{marginTop:"5%"}}>PLANS</h1>
         <ActionAreaCard/>
+        <h1>ABOUT</h1>
+        <p>lorem epsum</p>
     </div>
   )
 }
@@ -115,7 +117,7 @@ const Animatedtext = ()=>{
     threshold={0.1}
     rootMargin="20%"
   >
-    GET FOOD PREPARED AT YOUR HOME!
+    GET FOOD PREPARED AT YOUR KITCHEN!
   </AnimatedText>
     </>
   )
@@ -126,7 +128,7 @@ const ActionAreaCard = ()=>{
   return (
     <div className={"planscontainer"}>
     {subarr.map((item)=>
-      <Card sx={{ width: "22%" ,marginLeft:2,marginTop:3,marginRight:2,backgroundColor:"#F90716",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
+      <Card sx={{ width: "22%" ,margin:2,borderRadius:2,backgroundColor:"#F90716",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
       <CardActionArea>
         <CardMedia
           component="img"

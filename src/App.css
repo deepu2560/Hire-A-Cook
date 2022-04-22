@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: #e6ecf0;
 }
 
 .App-logo {
@@ -15,7 +14,7 @@
   align-items: center;
   margin: 0 auto;
   width: 100%;
-  background-color: rgb(227, 220, 220);
+  border-radius: 10px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -46,3 +45,7 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
