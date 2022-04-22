@@ -10,13 +10,13 @@ app.use(express.json());
 app.use(cors());
 
 const userConroller = require("./src/Controllers/userController");
-const cookController = require("./src/Controllers/cookController")
+const cookController = require("./src/Controllers/cookController");
 
 app.use("/auth", userConroller);
 
-app.use("/cook", cookController)
+app.use("/cook", cookController);
 
-app.listen(process.env.PORT || 8080, async () => {
+app.listen(process.env.PORT || 3000, async () => {
   try {
     await connect();
 
