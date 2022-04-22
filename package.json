@@ -1,0 +1,20 @@
+{
+  "name": "hire-a-cook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepu2560/Hire-A-Cook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deepu2560/Hire-A-Cook/issues"
+  },
+  "homepage": "https://github.com/Deepu2560/Hire-A-Cook#readme"
+}
