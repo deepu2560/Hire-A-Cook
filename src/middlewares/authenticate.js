@@ -17,7 +17,7 @@ module.exports = async (req, res, next) => {
       .status(401)
       .send({ error: true, token: "Token not provided or Invalid" });
 
-  const token = req.headers.authorization(split(" "))[1];
+  const token = req.headers.authorization;
 
   let user;
 
