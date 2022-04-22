@@ -13,7 +13,7 @@ const userConroller = require("./src/Controllers/userController");
 
 app.use("/auth", userConroller);
 
-app.listen(8080, async () => {
+app.listen(process.env.PORT || 8080, async () => {
   try {
     await connect();
 
