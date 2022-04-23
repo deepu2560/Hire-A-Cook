@@ -28,7 +28,10 @@ export const Home = () => {
         <h1 style={{marginTop:"5%"}}>PLANS</h1>
         <ActionAreaCard/>
         <h1>ABOUT</h1>
-        <p>lorem epsum</p>
+        <p style={{textAlign:"left",paddingLeft:25,fontWeight:"500"}}>Tired of eating outside food? Here is a way to eat healthy and fresh food that is prepared in your kitchen!.
+          Many of us face problems with food when you go to Tier 1 Cities. Many Students and Bachelors are bored of eating outside food and want food which just makes them feel homely.
+          Now you can hire a cook based on our subscription plans and we assure you that you will be no more eating unhealthy food. Our cooks are experienced and take maximum precautions in maintaining the quality of the food.
+        </p>
     </div>
   )
 }
