@@ -18,6 +18,8 @@ import {
 } from "../Redux/Cook_Details/actions";
 import { useNavigate } from "react-router-dom";
 
+
+
 const divstyles = {
   margin: "auto",
   marginTop: "2%",
@@ -46,6 +48,7 @@ export const Cooks = () => {
   const navigate = useNavigate();
 
   const [expanded, setExpanded] = React.useState(false);
+
 
   const { cookDetails } = useSelector((store) => {
     return store.details;
@@ -241,3 +244,23 @@ export const Cooks = () => {
     </>
   );
 };
+
+
+// function BasicPopover() {
+//   const [anchorEl, setAnchorEl] = React.useState(null);
+
+//   const handleClick = (event) => {
+//     setAnchorEl(event.currentTarget);
+//   };
+
+//   const handleClose = () => {
+//     setAnchorEl(null);
+//   };
+
+//   const open = Boolean(anchorEl);
+//   const id = open ? 'simple-popover' : undefined;
+
+//   return (
+    
+//   );
+// }

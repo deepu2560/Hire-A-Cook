@@ -1,0 +1,70 @@
+.chatcontainer{
+    width: 300px;
+    height: 380px;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 14px;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(171, 213, 233);
+}
+
+.chatmessages{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: legacy;
+  }
+.chatlist:nth-child(odd){
+    width: 100px;
+    background-color: rgb(211, 165, 66);
+    text-align: left;
+    border-radius: 10px;
+    padding: 4px 0px 4px 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: -30px;
+    border-bottom-left-radius: 0px;
+  }
+  .chatlist:nth-child(even){
+    width: 245px;
+    background-color: rgb(42, 212, 87);
+    text-align: right;
+    margin-left: -10px;
+    padding: 4px 15px 4px 0px;
+    border-radius:10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 20px;
+    border-bottom-right-radius: 0px;
+  }
+
+  /* #form{
+      transform: translateY(240px);
+  } */
+
+  #chatcont2{
+      height: 320px;
+      overflow:auto;
+  }
+  #chatinput{
+        width: 70%;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid rgb(39, 109, 230);
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+  }
+  #chatsend{
+        width: 20%;
+        height: 35px;
+        border-radius: 10px;
+        border: 1px solid rgb(39, 109, 230);
+        background-color: rgb(56, 108, 197);
+        color:white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px
+  }

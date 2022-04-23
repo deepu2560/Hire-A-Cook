@@ -104,7 +104,7 @@ export const Footer = () => {
             </div>
             <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">
               <div className="footer-menu">
-                <ul>
+                <ul className={"footerul"}>
                   <li>
                     <a href="#">Home</a>
                   </li>
