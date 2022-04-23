@@ -79,9 +79,9 @@ const Slideshow = () => {
   return (
     <div
       className="slide-container"
-      style={{ margin: "auto", width: 1000, height: 500, marginTop: 40 }}
+      style={{ margin: "auto", width: "100%", height: "100%", marginTop: 40 }}
     >
-      <Fade>
+      <Fade sx={{ width: "100%" }}>
         {imgarr.map((fadeImage, index) => (
           <div className="each-fade" key={index}>
             <div className="image-container">

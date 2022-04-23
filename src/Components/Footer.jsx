@@ -69,9 +69,8 @@ export const Footer = () => {
               <div className="footer-widget">
                 <div className="footer-text">
                   <p>
-                    Lorem ipsum dolor sit amet, consec tetur adipisicing elit,
-                    sed do eiusmod tempor incididuntut consec tetur adipisicing
-                    elit,Lorem ipsum dolor sit amet.
+                    This a hackathon project. Team members name :- Deepanshu
+                    Gulia, Anand S Holla, Siddalinga Koudi, Gollu Megha Shyam
                   </p>
                 </div>
                 <div className="footer-social-icon">

@@ -49,6 +49,7 @@ export default function ButtonAppBar() {
               sx={{
                 textTransform: "uppercase",
                 fontSize: "14px",
+                cursor: "pointer",
               }}
             >
               Hire Cook
