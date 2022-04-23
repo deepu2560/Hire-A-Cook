@@ -74,7 +74,7 @@ export const Footer = () => {
                     elit,Lorem ipsum dolor sit amet.
                   </p>
                 </div>
-                <div class="footer-social-icon">
+                <div className="footer-social-icon">
                   <span>Follow us</span>
                   <a href="">
                     <FacebookIcon sx={{ color: "#3b5998", fontSize: "50px" }} />
@@ -96,7 +96,10 @@ export const Footer = () => {
           <div className="row">
             <div className="col-xl-6 col-lg-6 text-center text-lg-left">
               <div className="copyright-text">
-                <p>Copyright &copy; 2020, All Right Reserved</p>
+                <p>
+                  Copyright &copy; {new Date().getFullYear()}, All Right
+                  Reserved
+                </p>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">
