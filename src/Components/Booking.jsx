@@ -71,6 +71,7 @@ export const Booking = () => {
   const handleCheckout = () => {
     const finalPrice = cook.rate * members * visits * packageset;
     const bookingDetails = {
+      name: cook.name,
       price: finalPrice,
       cookId: cook._id,
       members: members,
