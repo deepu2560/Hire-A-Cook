@@ -1,7 +1,5 @@
 import React from "react";
-import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import MailIcon from "@mui/icons-material/Mail";
 import GoogleIcon from "@mui/icons-material/Google";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -22,6 +20,7 @@ export const Footer = () => {
                     <a
                       href="https://github.com/Deepu2560/Hire-A-Cook"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Click Me
                     </a>
@@ -38,6 +37,7 @@ export const Footer = () => {
                     <a
                       href="https://github.com/Deepu2560/Hire-A-Cook/tree/Backend"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Click Me
                     </a>
@@ -54,6 +54,7 @@ export const Footer = () => {
                     <a
                       href="https://github.com/Deepu2560/Hire-A-Cook/tree/Frontend"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Click Me
                     </a>
@@ -75,13 +76,13 @@ export const Footer = () => {
                 </div>
                 <div className="footer-social-icon">
                   <span>Follow us</span>
-                  <a href="">
+                  <a href="#">
                     <FacebookIcon sx={{ color: "#3b5998", fontSize: "50px" }} />
                   </a>
-                  <a href="">
+                  <a href="#">
                     <TwitterIcon sx={{ color: "#55acee", fontSize: "50px" }} />
                   </a>
-                  <a href="">
+                  <a href="#">
                     <GoogleIcon sx={{ color: "#dd4b39", fontSize: "50px" }} />
                   </a>
                 </div>
@@ -105,19 +106,19 @@ export const Footer = () => {
               <div className="footer-menu">
                 <ul>
                   <li>
-                    <a href="">Home</a>
+                    <a href="#">Home</a>
                   </li>
                   <li>
-                    <a href="">Terms</a>
+                    <a href="#">Terms</a>
                   </li>
                   <li>
-                    <a href="">Privacy</a>
+                    <a href="#">Privacy</a>
                   </li>
                   <li>
-                    <a href="">Policy</a>
+                    <a href="#">Policy</a>
                   </li>
                   <li>
-                    <a href="">Contact</a>
+                    <a href="#">Contact</a>
                   </li>
                 </ul>
               </div>

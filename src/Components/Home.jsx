@@ -1,16 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import React from "react";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import { fontSize } from "@mui/system";
 import AnimatedText from "react-animated-text-content";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import Button from "@mui/material/Button";
 
 const imgarr = [
   {
@@ -24,20 +20,14 @@ const imgarr = [
   },
 ];
 export const Home = () => {
-  const login = useSelector((state) => state.login.loading);
-
-  console.log(login);
-  // useEffect(()=>{
-  //   console.log(login)
-  // },[]
   return (
     <div>
       <Animatedtext />
       <Slideshow />
-      <h1 style={{ marginTop: "5%" }}>PLANS</h1>
+      <h1 className="home-page-plans-h1">PLANS</h1>
       <ActionAreaCard />
       <h1>ABOUT</h1>
-      <p style={{ textAlign: "left", paddingLeft: 25, fontWeight: "500" }}>
+      <p className="homw-page-about-p">
         Tired of eating outside food? Here is a way to eat healthy and fresh
         food that is prepared in your kitchen!. Many of us face problems with
         food when you go to Tier 1 Cities. Many Students and Bachelors are bored
@@ -77,15 +67,16 @@ const Slideshow = () => {
   }, [index]);
 
   return (
-    <div
-      className="slide-container"
-      style={{ margin: "auto", width: "100%", height: "100%", marginTop: 40 }}
-    >
-      <Fade sx={{ width: "100%" }}>
+    <div className="slide-container">
+      <Fade sx={{ width: "100%" }} className="slideshow-home-page">
         {imgarr.map((fadeImage, index) => (
           <div className="each-fade" key={index}>
             <div className="image-container">
-              <img src={fadeImage.url} style={{ height: 500, width: 1000 }} />
+              <img
+                alt=""
+                src={fadeImage.url}
+                className="home-page-sliding-image"
+              />
             </div>
           </div>
         ))}
@@ -163,7 +154,7 @@ const ActionAreaCard = () => {
       {subarr.map((item, i) => (
         <Card
           sx={{
-            width: "22%",
+            width: "100%",
             margin: 2,
             borderRadius: 2,
             backgroundColor: "#F90716",

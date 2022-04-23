@@ -38,36 +38,23 @@ export default function ButtonAppBar() {
           >
             <img
               src="https://cdn.iconscout.com/icon/free/png-256/chef-hat-2216706-1857400.png"
+              className="project-logo-img"
               alt=""
-              width="50"
             />
-            <Typography
-              sx={{
-                textTransform: "uppercase",
-                fontSize: "14px",
-                cursor: "pointer",
-              }}
-            >
-              Hire Cook
-            </Typography>
+            <Typography className="project-logo-name">Hire Cook</Typography>
           </div>
-          <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
+          <div className="navbar-login-logout-div">
             <Button color="inherit" onClick={() => navigate("/cooks")}>
               Cooks
             </Button>
             {user !== {} && isAuth ? (
-              <Typography
-                sx={{
-                  textTransform: "uppercase",
-                  fontSize: "14px",
-                }}
-              >
+              <Typography className="logged-in-user-name">
                 Hi! {user.name}
               </Typography>
             ) : null}
 
             <Button color="inherit" onClick={(event) => handleAuth(event)}>
-              {isAuth == true ? "LOGOUT" : "LOGIN"}
+              {isAuth === true ? "LOGOUT" : "LOGIN"}
             </Button>
           </div>
         </Toolbar>
