@@ -17,12 +17,13 @@ import {
   GetCatCooks,
 } from "../Redux/Cook_Details/actions";
 import { useNavigate } from "react-router-dom";
+import "../Styles/CookDetails.css"
 
 const divstyles = {
   margin: "auto",
   marginTop: "2%",
   marginBottom: "4%",
-  width: "40%",
+  width: "80%",
   display: "flex",
   justifyContent: "space-around",
 };
@@ -79,31 +80,31 @@ export const Cooks = () => {
           width: "100%",
         }}
       >
-        <div style={divstyles}>
-          <Button
+        <div style={divstyles} className="topButtonsDiv">
+          <Button className="button-rate-veg-type"
             sx={{ background: "#4895ef", fontWeight: 900 }}
             variant="contained"
             onClick={() => {
-              setRate(rate == 1 ? -1 : 1);
+              setRate(rate === 1 ? -1 : 1);
             }}
           >
             {" "}
-            ₹ Rate {rate == 1 ? "Asc" : "Desc"}
+            ₹ Rate {rate === 1 ? "Asc" : "Desc"}
           </Button>
-          <Button
+          <Button className="button-rate-veg-type"
             sx={{ background: "#49a942", fontWeight: 900 }}
             variant="contained"
             onClick={() => {
-              setCat(cat == "Veg" ? "Non-Veg" : "Veg");
+              setCat(cat === "Veg" ? "Non-Veg" : "Veg");
             }}
           >
             {cat}
           </Button>
-          <Button
+          <Button className="button-rate-veg-type"
             sx={{ background: "#fca311", fontWeight: 900 }}
             variant="contained"
             onClick={() => {
-              setCuisines(cuisines == "South" ? "North" : "South");
+              setCuisines(cuisines === "South" ? "North" : "South");
             }}
           >
             {cuisines} Indian
@@ -120,13 +121,8 @@ export const Cooks = () => {
           margin: "auto",
         }}
       >
-        {/* {cookDetails?cookDetails.map((cook)=>
-      <div>
-        <p>{cook.name}</p>
-      </div>
-      ):""} */}
         {cookDetails.map((info, index) => (
-          <Card key={index} sx={{ width: 320, background: "#f08080" }}>
+          <Card id="cardsboxes" key={index} sx={{ width: 320, background: "#f08080" }}>
             <CardHeader />
             <CardMedia
               sx={{
@@ -181,7 +177,7 @@ export const Cooks = () => {
                   <b>Cuisines</b> : {info.cuisines[0]}, {info.cuisines[1]}
                 </Typography>
                 <Typography>
-                  <b>Rating</b> : {info.rating}
+                  <b className="boldLetter">Rating</b> : {info.rating}
                 </Typography>
                 <Typography>
                   <b>Rate</b> : ₹ {info.rate}/- Per Visit
@@ -210,9 +206,9 @@ export const Cooks = () => {
         }}
       >
         <Button
-          disabled={page == 1}
+          disabled={page === 1}
           style={{
-            background: page == 1 ? "red" : "blue",
+            background: page === 1 ? "red" : "blue",
             fontWeight: 900,
             color: "white",
           }}
@@ -224,9 +220,9 @@ export const Cooks = () => {
           Prev Page
         </Button>
         <Button
-          disabled={page == 2}
+          disabled={page === 2}
           style={{
-            background: page == 2 ? "red" : "green",
+            background: page === 2 ? "red" : "green",
             fontWeight: 900,
             color: "white",
           }}
