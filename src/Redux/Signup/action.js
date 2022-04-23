@@ -25,7 +25,7 @@ export const SignupFailure = () => {
 export const SignupDispatch = (userSignupDetails) => (dispatch) => {
     console.log(userSignupDetails);
     dispatch(SignupLoading());
-    axios.post(`http://appartmentbackend.herokuapp.com/signup`, {
+    axios.post(`https://hire-a-cook.herokuapp.com/auth/register`, {
         ...userSignupDetails
     }).then((res) => {
         console.log(res);
