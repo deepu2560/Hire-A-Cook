@@ -153,7 +153,7 @@ export const Cooks = () => {
                   marginLeft: "40%",
                 }}
                 variant="contained"
-                onClick={() => navigate("/booking")}
+                onClick={() => navigate(`/booking/${info._id}`)}
               >
                 Book
               </Button>

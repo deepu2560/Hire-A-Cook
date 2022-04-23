@@ -16,7 +16,7 @@ import AddressForm from "./Address";
 import PaymentForm from "./Payment";
 import Review from "./Review";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Navigate,useNavigate } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -31,7 +31,7 @@ function Copyright() {
   );
 }
 
-const steps = ["Shipping address", "Payment details", "Review your order"];
+const steps = ["Billing address", "Payment details", "Review your order"];
 
 function getStepContent(step) {
   switch (step) {
@@ -50,10 +50,10 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
-
+  const navigate = useNavigate()
   const isAuth = useSelector((store) => store.login.isAuthenticated);
   // const navigate = useNavigate();
-
+  // const cookname = useSelector()
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -63,7 +63,7 @@ export default function Checkout() {
   };
 
   if (isAuth === false) {
-    alert("ERROR! Please Login first.");
+    // alert("ERROR! Please Login first.");
     return <Navigate to="/login" />;
   }
   return (
@@ -103,12 +103,16 @@ export default function Checkout() {
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
+                Thankyou for Booking on Hire Chef
                 </Typography>
+                <Button
+                    variant="contained"
+                    onClick={()=>navigate("/")}
+                    sx={{ mt: 3, ml: 1 }}
+                  >
+                    Go Back To Home
+                  </Button>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order
-                  confirmation, and will send you an update when your order has
-                  shipped.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -126,7 +130,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? "Place order" : "Next"}
+                    {activeStep === steps.length - 1 ? "Book" : "Next"}
                   </Button>
                 </Box>
               </React.Fragment>
