@@ -6,10 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useDispatch, useSelector } from 'react-redux';
@@ -108,12 +106,6 @@ export const Cooks = () => {
               </Typography>
               <Typography>
                 <b>Experience</b> : {info?.experience} Years
-              </Typography>
-              <Typography>
-              <b>Email</b> : {info?.email}
-              </Typography>
-              <Typography>
-              <b>Mobile</b> : +91 {info?.mobile}
               </Typography>
               <Typography>
                 <b>Categories</b> : {info?.categories[0]}, {info?.categories[1]}
