@@ -44,7 +44,7 @@ export const Cooks = () => {
 
   const {cookDetails} = useSelector((store)=>{return store.details})
   const dispatch = useDispatch()
-  
+  console.log(cookDetails)
   React.useEffect(()=>{
     dispatch(GetCuisinesCooks({cuisines}))
   },[cuisines])
@@ -64,32 +64,37 @@ export const Cooks = () => {
   return <>
    <div style={{border:"1px solid transparent",height:100,background:"#da1e37",marginBottom:"4%",width:"100%"}}>
     <div style={divstyles}>
-          <Button style={{background:"#4895ef",fontWeight:900}} 
+          <Button sx={{background:"#4895ef",fontWeight:900}} 
           variant="contained" onClick={()=>{setRate(rate==1?-1:1)}}> ₹ Rate {rate==1?"Asc":"Desc"}</Button>
-          <Button style={{background:"#49a942",fontWeight:900}} 
+          <Button sx={{background:"#49a942",fontWeight:900}} 
           variant="contained" onClick={()=>{setCat(cat=="Veg"?"Non-Veg":"Veg")}}>{cat}</Button>
-          <Button style={{background:"#fca311",fontWeight:900}} 
+          <Button sx={{background:"#fca311",fontWeight:900}} 
           variant="contained" onClick={()=>{setCuisines(cuisines == "South"?"North":"South")}}>{cuisines} Indian</Button>
       </div>
    </div>
    <div style={{display:"flex",flexWrap:"wrap",gap:30,justifyContent:"space-evenly",width:'80%',margin:"auto"}}>
-      {cookDetails?.map((info,index)=>(
+      {/* {cookDetails?cookDetails.map((cook)=>
+      <div>
+        <p>{cook.name}</p>
+      </div>
+      ):""} */}
+      {cookDetails.map((info,index)=>(
         <Card key={index} sx={{ width: 320,background:"#f08080"}}>
           <CardHeader/>
-          <CardMedia style={{border:"1px solid gray",borderRadius:"50%",width:"65%",margin:'auto'}}
+          <CardMedia sx={{border:"1px solid gray",borderRadius:"50%",width:"65%",margin:'auto'}}
             component="img"
             height="184"
-            image={info?.images}
+            image={info.images}
             alt="Chef Pic"
           />
-          <CardContent style={{color:"white"}}>
+          <CardContent sx={{color:"white"}}>
           <Typography variant="h5" color="InfoText">
-              {info?.name}
+              {info.name}
             </Typography>
             
           </CardContent>
           <CardActions disableSpacing>
-          <Button style={{background:"#7fc8f8",fontWeight:900,marginLeft:"40%"}} variant="contained">Book</Button>
+          <Button sx={{background:"#7fc8f8",fontWeight:900,marginLeft:"40%"}} variant="contained">Book</Button>
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}
@@ -100,28 +105,28 @@ export const Cooks = () => {
             </ExpandMore>
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <CardContent style={{textAlign:"left"}} >
+            <CardContent sx={{textAlign:"left"}} >
               <Typography>
-                <b>Name</b> : {info?.name}
+                <b>Name</b> : {info.name}
               </Typography>
               <Typography>
-                <b>Experience</b> : {info?.experience} Years
+                <b>Experience</b> : {info.experience} Years
               </Typography>
               <Typography>
-                <b>Categories</b> : {info?.categories[0]}, {info?.categories[1]}
+                <b>Categories</b> : {info.categories[0]}, {info.categories[1]}
               </Typography>
               <Typography>
-              <b>Cuisines</b> : {info?.cuisines[0]}, {info?.cuisines[1]}
+              <b>Cuisines</b> : {info.cuisines[0]}, {info.cuisines[1]}
               </Typography>
               <Typography>
-              <b>Rating</b> : {info?.rating}⭐
+              <b>Rating</b> : {info.rating}
               </Typography>
               <Typography>
-                <b>Rate</b> :  ₹ {info?.rate}/- Per Visit
+                <b>Rate</b> :  ₹ {info.rate}/- Per Visit
               </Typography>
               <Typography>
-                <b>Reviews</b> : {info?.reviews.map((el,index)=>(
-                  <div key={index}>{index+1}) {el}</div>
+                <b>Reviews</b> : {info.reviews.map((el,index)=>(
+                  <div key={index}>{index+1} {el}</div>
                 ))}
               </Typography>
             </CardContent>
