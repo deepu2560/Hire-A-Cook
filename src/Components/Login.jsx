@@ -32,7 +32,8 @@ const theme = createTheme();
 
 export default function SignInSide() {
   const dispatch = useDispatch()
-  const {loading} = useSelector((state)=>state.login)
+  const {loading,user} = useSelector((state)=>state.login)
+  console.log("user",user)
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -121,7 +122,6 @@ export default function SignInSide() {
                   <Link to='/signup'  variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
-                  
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />
