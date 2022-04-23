@@ -30,6 +30,6 @@ export const SignupDispatch = (userSignupDetails) => (dispatch) => {
     }).then((res) => {
         console.log(res);
         dispatch(SignupSuccess(res.data));
-    }).catch((error) => {dispatch(SignupFailure)})
+    }).catch((error) => {dispatch(SignupFailure())})
 
 }

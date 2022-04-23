@@ -32,6 +32,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
+  const { loading, error } = useSelector((state) => state.signup);
   const dispatch = useDispatch()
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -138,10 +139,12 @@ export default function SignInSide() {
                 type="submit"
                 fullWidth
                 variant="contained"
+                disabled={loading}
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign Up
+                {loading ? "Creating account..." : "Sign Up"}
               </Button>
+              {error ? "Failed to Create an account" : ""}
               <Grid container>
                 <Grid item xs>
                   <Link to="/" variant="body2">

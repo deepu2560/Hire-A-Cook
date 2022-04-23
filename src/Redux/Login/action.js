@@ -31,6 +31,6 @@ export const LoginDispatch = (userLoginDetails) => (dispatch) => {
     }).then((res) => {
         console.log(res);
         dispatch(LoginSuccess(res.data.token));
-    }).catch((error) => {dispatch(LoginFailure)})
+    }).catch((error) => {console.log(error);dispatch(LoginFailure())})
 
 }
