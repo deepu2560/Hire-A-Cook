@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SetUserBooking } from "../Redux/Booking/action";
 import "../Styles/Booking.css";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Navigate, useParams } from "react-router-dom";
 
 const selectStyle = {
   width: "90%",
@@ -33,6 +33,8 @@ export const Booking = () => {
   const booking = useSelector((state) => state.booking);
   const isAuth = useSelector((store) => store.login.isAuthenticated);
   const navigate = useNavigate();
+  const {id} = useParams();
+  console.log(id);
 
   const handleChange = (event) => {
     setCategory(event.target.value);
@@ -52,10 +54,10 @@ export const Booking = () => {
 
   const getCook = () => {
     axios
-      .get(`https://hire-a-cook.herokuapp.com/cook`)
+      .get(`https://hire-a-cook.herokuapp.com/cook/${id}`)
       .then((res) => {
-        console.log(res.data[0]);
-        setCook({ ...res.data[0] });
+        console.log(res.data);
+        setCook({ ...res.data});
       })
       .catch((error) => {
         console.log("error is", error);
@@ -69,6 +71,7 @@ export const Booking = () => {
   const handleCheckout = () => {
     const finalPrice = cook.rate * members * visits * packageset;
     const bookingDetails = {
+      name: cook.name,
       price: finalPrice,
       cookId: cook._id,
       members: members,
