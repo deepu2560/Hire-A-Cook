@@ -1,0 +1,27 @@
+@media screen and (min-width:376px) and (max-width:768px) {
+
+    .button-rate-veg-type{
+        width:24%;
+        height:40px;
+    }
+
+    #cardsboxes
+    {
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width:375px) {
+
+    .button-rate-veg-type{
+        width:29%;
+        height:40px;
+    }
+
+    #cardsboxes
+    {
+        width:90%;
+    }
+
+}

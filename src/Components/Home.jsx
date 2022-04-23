@@ -8,6 +8,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
+
 const imgarr = [
   {
     url: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwZm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
@@ -27,16 +28,18 @@ export const Home = () => {
       <h1 className="home-page-plans-h1">PLANS</h1>
       <ActionAreaCard />
       <h1>ABOUT</h1>
-      <p className="homw-page-about-p">
-        Tired of eating outside food? Here is a way to eat healthy and fresh
-        food that is prepared in your kitchen!. Many of us face problems with
-        food when you go to Tier 1 Cities. Many Students and Bachelors are bored
-        of eating outside food and want food which just makes them feel homely.
-        Now you can hire a cook based on our subscription plans and we assure
-        you that you will be no more eating unhealthy food. Our cooks are
-        experienced and take maximum precautions in maintaining the quality of
-        the food.
-      </p>
+     <div style={{width:"55%",margin:"auto",lineHeight:"25px",color:"rgb(80, 79, 79)"}}>
+      <p style={{ textAlign: "center", paddingLeft: 25, fontWeight: "500" }}>
+          Tired of eating outside food? Here is a way to eat healthy and fresh
+          food that is prepared in your kitchen!. Many of us face problems with
+          food when you go to Tier 1 Cities. Many Students and Bachelors are bored
+          of eating outside food and want food which just makes them feel homely.
+          Now you can hire a cook based on our subscription plans and we assure
+          you that you will be no more eating unhealthy food. Our cooks are
+          experienced and take maximum precautions in maintaining the quality of
+          the food.
+        </p>
+     </div>
     </div>
   );
 };
@@ -81,6 +84,7 @@ const Slideshow = () => {
           </div>
         ))}
       </Fade>
+
     </div>
   );
 };
