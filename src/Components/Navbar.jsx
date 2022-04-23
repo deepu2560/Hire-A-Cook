@@ -4,11 +4,8 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import FoodBankIcon from "@mui/icons-material/FoodBank";
 import { logoutSuccess } from "../Redux/Login/action";
 
 export default function ButtonAppBar() {
@@ -16,7 +13,6 @@ export default function ButtonAppBar() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.login.user);
   const isAuth = useSelector((store) => store.login.isAuthenticated);
-  console.log(isAuth);
 
   const handleAuth = ({ target }) => {
     if (isAuth === false) {
@@ -56,6 +52,9 @@ export default function ButtonAppBar() {
             </Typography>
           </div>
           <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
+            <Button color="inherit" onClick={() => navigate("/cooks")}>
+              Cooks
+            </Button>
             {user !== {} && isAuth ? (
               <Typography
                 sx={{

@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -7,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SetUserBooking } from "../Redux/Booking/action";
 import "../Styles/Booking.css";
+import { useNavigate, Navigate } from "react-router-dom";
 
 const selectStyle = {
   width: "90%",
@@ -29,6 +31,9 @@ export const Booking = () => {
   const [packageset, setPackage] = useState(1);
   const dispatch = useDispatch();
   const booking = useSelector((state) => state.booking);
+  const isAuth = useSelector((store) => store.login.isAuthenticated);
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
     setCategory(event.target.value);
   };
@@ -72,7 +77,12 @@ export const Booking = () => {
     };
     dispatch(SetUserBooking(bookingDetails));
     console.log(booking);
+    navigate("/checkout");
   };
+
+  if (isAuth === false) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <div className="booking">
@@ -173,13 +183,16 @@ export const Booking = () => {
             <div>
               Final Price <b>₹{cook.rate * packageset * members * visits}</b>
             </div>
-            <div style={{width: "90%", marginTop : "5%"}}>
-              <Button sx={{padding: "5px"}} className="checkout_button" onClick={handleCheckout}>
+            <div style={{ width: "90%", marginTop: "5%" }}>
+              <Button
+                sx={{ padding: "5px" }}
+                className="checkout_button"
+                onClick={handleCheckout}
+              >
                 Checkout
               </Button>
             </div>
           </div>
-          
 
           {/* times per day */}
           {/*  */}
