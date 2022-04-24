@@ -7,7 +7,7 @@ import { SignUpSide } from "./Components/Signup";
 import { Navbar } from "./Components/Navbar";
 import { Booking } from "./Components/Booking";
 import { Footer } from "./Components/Footer";
-import { Checkout } from "./Components/Checkout";
+import Checkout from "./Components/Checkout";
 import { Cooks } from "./Components/CookDetail";
 import { Chat } from "./Components/Chat";
 import Popover from "@mui/material/Popover";

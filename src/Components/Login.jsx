@@ -38,8 +38,8 @@ const theme = createTheme();
 export const SignInSide = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, user, error } = useSelector((state) => state.login);
-  console.log("user", user);
+  const { loading, error } = useSelector((state) => state.login);
+  // console.log("user", user);
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -47,7 +47,7 @@ export const SignInSide = () => {
       username: data.get("username"),
       password: data.get("password"),
     };
-    console.log(form_obj);
+    // console.log(form_obj);
     dispatch(LoginDispatch(form_obj));
     navigate("/");
   };

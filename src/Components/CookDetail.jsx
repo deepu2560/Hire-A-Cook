@@ -52,7 +52,7 @@ export const Cooks = () => {
     return store.details;
   });
   const dispatch = useDispatch();
-  console.log(cookDetails);
+  // console.log(cookDetails);
   useEffect(() => {
     dispatch(GetCuisinesCooks({ cuisines }));
   }, [cuisines]);

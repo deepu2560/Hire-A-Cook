@@ -16,7 +16,7 @@ export const Chat = () => {
     e.preventDefault();
     socket.emit("chat message", text);
   };
-  console.log(text);
+  // console.log(text);
   socket.on("chat message", function (msg) {
     setMessages([...messages, msg]);
   });

@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-export const AddressForm = () => {
+function AddressForm() {
   return (
-    <Fragment>
+    <div>
       <Typography variant="h6" gutterBottom>
         Address
       </Typography>
@@ -106,6 +106,8 @@ export const AddressForm = () => {
           />
         </Grid>
       </Grid>
-    </Fragment>
+    </div>
   );
-};
+}
+
+export default AddressForm;

@@ -48,7 +48,7 @@ export const SignUpSide = () => {
       username: data.get("username"),
       password: data.get("password"),
     };
-    console.log(form_obj);
+    // console.log(form_obj);
     dispatch(SignupDispatch(form_obj));
   };
 

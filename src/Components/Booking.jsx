@@ -30,11 +30,10 @@ export const Booking = () => {
   const [visits, setVisits] = useState(1);
   const [packageset, setPackage] = useState(1);
   const dispatch = useDispatch();
-  const booking = useSelector((state) => state.booking);
   const isAuth = useSelector((store) => store.login.isAuthenticated);
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const handleChange = (event) => {
     setCategory(event.target.value);
@@ -56,7 +55,7 @@ export const Booking = () => {
     axios
       .get(`https://hire-a-cook.herokuapp.com/cook/${id}`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setCook({ ...res.data });
       })
       .catch((error) => {
@@ -79,7 +78,7 @@ export const Booking = () => {
       package: packageset,
     };
     dispatch(SetUserBooking(bookingDetails));
-    console.log(booking);
+    // console.log(booking);
     navigate("/checkout");
   };
 

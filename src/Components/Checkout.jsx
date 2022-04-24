@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -13,22 +13,9 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
-import { AddressForm } from "./Address";
-import { PaymentForm } from "./Payment";
-import { Review } from "./Review";
-
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center">
-//       {"Copyright © "}
-//       <Link color="inherit" href="https://mui.com/">
-//         Your Website
-//       </Link>{" "}
-//       {new Date().getFullYear()}
-//       {"."}
-//     </Typography>
-//   );
-// }
+import AddressForm from "./Address";
+import PaymentForm from "./Payment";
+import Review from "./Review";
 
 const steps = ["Billing address", "Payment details", "Review your order"];
 
@@ -47,7 +34,7 @@ function getStepContent(step) {
 
 const theme = createTheme();
 
-export const Checkout = () => {
+function Checkout() {
   const [activeStep, setActiveStep] = useState(0);
   const navigate = useNavigate();
   const isAuth = useSelector((store) => store.login.isAuthenticated);
@@ -98,9 +85,9 @@ export const Checkout = () => {
               </Step>
             ))}
           </Stepper>
-          <Fragment>
+          <div>
             {activeStep === steps.length ? (
-              <Fragment>
+              <div>
                 <Typography variant="h5" gutterBottom>
                   Thankyou for Booking on Hire Chef
                 </Typography>
@@ -112,9 +99,9 @@ export const Checkout = () => {
                   Go Back To Home
                 </Button>
                 <Typography variant="subtitle1"></Typography>
-              </Fragment>
+              </div>
             ) : (
-              <Fragment>
+              <div>
                 {getStepContent(activeStep)}
                 <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                   {activeStep !== 0 && (
@@ -131,12 +118,14 @@ export const Checkout = () => {
                     {activeStep === steps.length - 1 ? "Book" : "Next"}
                   </Button>
                 </Box>
-              </Fragment>
+              </div>
             )}
-          </Fragment>
+          </div>
         </Paper>
         {/* <Copyright /> */}
       </Container>
     </ThemeProvider>
   );
-};
+}
+
+export default Checkout;
