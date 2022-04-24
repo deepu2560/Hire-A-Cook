@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -17,9 +17,7 @@ import {
   GetCatCooks,
 } from "../Redux/Cook_Details/actions";
 import { useNavigate } from "react-router-dom";
-import "../Styles/CookDetails.css"
-
-
+import "../Styles/CookDetails.css";
 
 const divstyles = {
   margin: "auto",
@@ -42,29 +40,28 @@ const ExpandMore = styled((props) => {
 }));
 
 export const Cooks = () => {
-  const [page, setPage] = React.useState(1);
-  const [rate, setRate] = React.useState(1);
-  const [cat, setCat] = React.useState("Veg");
-  const [cuisines, setCuisines] = React.useState("South");
+  const [page, setPage] = useState(1);
+  const [rate, setRate] = useState(1);
+  const [cat, setCat] = useState("Veg");
+  const [cuisines, setCuisines] = useState("South");
   const navigate = useNavigate();
 
-  const [expanded, setExpanded] = React.useState(false);
-
+  const [expanded, setExpanded] = useState(false);
 
   const { cookDetails } = useSelector((store) => {
     return store.details;
   });
   const dispatch = useDispatch();
   console.log(cookDetails);
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(GetCuisinesCooks({ cuisines }));
   }, [cuisines]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(GetCatCooks({ cat }));
   }, [cat]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(GetCooks({ page, rate }));
   }, [page, rate]);
 
@@ -84,7 +81,8 @@ export const Cooks = () => {
         }}
       >
         <div style={divstyles} className="topButtonsDiv">
-          <Button className="button-rate-veg-type"
+          <Button
+            className="button-rate-veg-type"
             sx={{ background: "#4895ef", fontWeight: 900 }}
             variant="contained"
             onClick={() => {
@@ -94,7 +92,8 @@ export const Cooks = () => {
             {" "}
             ₹ Rate {rate === 1 ? "Asc" : "Desc"}
           </Button>
-          <Button className="button-rate-veg-type"
+          <Button
+            className="button-rate-veg-type"
             sx={{ background: "#49a942", fontWeight: 900 }}
             variant="contained"
             onClick={() => {
@@ -103,7 +102,8 @@ export const Cooks = () => {
           >
             {cat}
           </Button>
-          <Button className="button-rate-veg-type"
+          <Button
+            className="button-rate-veg-type"
             sx={{ background: "#fca311", fontWeight: 900 }}
             variant="contained"
             onClick={() => {
@@ -125,7 +125,11 @@ export const Cooks = () => {
         }}
       >
         {cookDetails.map((info, index) => (
-          <Card id="cardsboxes" key={index} sx={{ width: 320, background: "#f08080" }}>
+          <Card
+            id="cardsboxes"
+            key={index}
+            sx={{ width: 320, background: "#f08080" }}
+          >
             <CardHeader />
             <CardMedia
               sx={{
@@ -241,7 +245,6 @@ export const Cooks = () => {
   );
 };
 
-
 // function BasicPopover() {
 //   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -257,6 +260,6 @@ export const Cooks = () => {
 //   const id = open ? 'simple-popover' : undefined;
 
 //   return (
-    
+
 //   );
 // }

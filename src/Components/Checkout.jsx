@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -11,11 +11,11 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import AddressForm from "./Address";
-import PaymentForm from "./Payment";
-import Review from "./Review";
 import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
+import { AddressForm } from "./Address";
+import { PaymentForm } from "./Payment";
+import { Review } from "./Review";
 
 // function Copyright() {
 //   return (
@@ -47,8 +47,8 @@ function getStepContent(step) {
 
 const theme = createTheme();
 
-export default function Checkout() {
-  const [activeStep, setActiveStep] = React.useState(0);
+export const Checkout = () => {
+  const [activeStep, setActiveStep] = useState(0);
   const navigate = useNavigate();
   const isAuth = useSelector((store) => store.login.isAuthenticated);
   // const navigate = useNavigate();
@@ -98,9 +98,9 @@ export default function Checkout() {
               </Step>
             ))}
           </Stepper>
-          <React.Fragment>
+          <Fragment>
             {activeStep === steps.length ? (
-              <React.Fragment>
+              <Fragment>
                 <Typography variant="h5" gutterBottom>
                   Thankyou for Booking on Hire Chef
                 </Typography>
@@ -112,9 +112,9 @@ export default function Checkout() {
                   Go Back To Home
                 </Button>
                 <Typography variant="subtitle1"></Typography>
-              </React.Fragment>
+              </Fragment>
             ) : (
-              <React.Fragment>
+              <Fragment>
                 {getStepContent(activeStep)}
                 <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                   {activeStep !== 0 && (
@@ -131,12 +131,12 @@ export default function Checkout() {
                     {activeStep === steps.length - 1 ? "Book" : "Next"}
                   </Button>
                 </Box>
-              </React.Fragment>
+              </Fragment>
             )}
-          </React.Fragment>
+          </Fragment>
         </Paper>
         {/* <Copyright /> */}
       </Container>
     </ThemeProvider>
   );
-}
+};

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Fragment } from "react";
 import Typography from "@mui/material/Typography";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -6,11 +6,11 @@ import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
 import { useSelector } from "react-redux";
 
-export default function Review() {
+export const Review = () => {
   const Cookname = useSelector((store) => store.booking);
   console.log(Cookname);
   return (
-    <React.Fragment>
+    <Fragment>
       <Typography variant="h6" gutterBottom>
         Booking summary
       </Typography>
@@ -34,6 +34,6 @@ export default function Review() {
           </Typography>
         </Grid>
       </Grid>
-    </React.Fragment>
+    </Fragment>
   );
-}
+};

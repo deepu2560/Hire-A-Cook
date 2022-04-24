@@ -2,12 +2,12 @@ import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./Components/Home";
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
-import Navbar from "./Components/Navbar";
+import { SignInSide } from "./Components/Login";
+import { SignUpSide } from "./Components/Signup";
+import { Navbar } from "./Components/Navbar";
 import { Booking } from "./Components/Booking";
 import { Footer } from "./Components/Footer";
-import Checkout from "./Components/Checkout";
+import { Checkout } from "./Components/Checkout";
 import { Cooks } from "./Components/CookDetail";
 import { Chat } from "./Components/Chat";
 import Popover from "@mui/material/Popover";
@@ -32,8 +32,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<SignInSide />} />
+        <Route path="/signup" element={<SignUpSide />} />
         <Route path="/booking/:id" element={<Booking />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cooks" element={<Cooks />} />

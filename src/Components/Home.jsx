@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import AnimatedText from "react-animated-text-content";
@@ -7,7 +7,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-
 
 const imgarr = [
   {
@@ -20,6 +19,7 @@ const imgarr = [
     url: "https://media.istockphoto.com/photos/smiling-woman-cutting-zucchini-picture-id838310992?k=20&m=838310992&s=612x612&w=0&h=n48Tp71wTO84wrLIht7Lvk8m2e3KkUXJs_9D3eVxGLk=",
   },
 ];
+
 export const Home = () => {
   return (
     <div>
@@ -28,25 +28,32 @@ export const Home = () => {
       <h1 className="home-page-plans-h1">PLANS</h1>
       <ActionAreaCard />
       <h1>ABOUT</h1>
-     <div style={{width:"55%",margin:"auto",lineHeight:"25px",color:"rgb(80, 79, 79)"}}>
-      <p style={{ textAlign: "center", paddingLeft: 25, fontWeight: "500" }}>
+      <div
+        style={{
+          width: "55%",
+          margin: "auto",
+          lineHeight: "25px",
+          color: "rgb(80, 79, 79)",
+        }}
+      >
+        <p style={{ textAlign: "center", paddingLeft: 25, fontWeight: "500" }}>
           Tired of eating outside food? Here is a way to eat healthy and fresh
           food that is prepared in your kitchen!. Many of us face problems with
-          food when you go to Tier 1 Cities. Many Students and Bachelors are bored
-          of eating outside food and want food which just makes them feel homely.
-          Now you can hire a cook based on our subscription plans and we assure
-          you that you will be no more eating unhealthy food. Our cooks are
-          experienced and take maximum precautions in maintaining the quality of
-          the food.
+          food when you go to Tier 1 Cities. Many Students and Bachelors are
+          bored of eating outside food and want food which just makes them feel
+          homely. Now you can hire a cook based on our subscription plans and we
+          assure you that you will be no more eating unhealthy food. Our cooks
+          are experienced and take maximum precautions in maintaining the
+          quality of the food.
         </p>
-     </div>
+      </div>
     </div>
   );
 };
 
 const Slideshow = () => {
-  const [index, setIndex] = React.useState(0);
-  const timeoutRef = React.useRef(null);
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
   const delay = 2000;
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -54,7 +61,7 @@ const Slideshow = () => {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     resetTimeout();
     timeoutRef.current = setTimeout(
       () =>
@@ -84,7 +91,6 @@ const Slideshow = () => {
           </div>
         ))}
       </Fade>
-
     </div>
   );
 };

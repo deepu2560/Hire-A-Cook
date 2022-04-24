@@ -33,7 +33,7 @@ export const Booking = () => {
   const booking = useSelector((state) => state.booking);
   const isAuth = useSelector((store) => store.login.isAuthenticated);
   const navigate = useNavigate();
-  const {id} = useParams();
+  const { id } = useParams();
   console.log(id);
 
   const handleChange = (event) => {
@@ -57,7 +57,7 @@ export const Booking = () => {
       .get(`https://hire-a-cook.herokuapp.com/cook/${id}`)
       .then((res) => {
         console.log(res.data);
-        setCook({ ...res.data});
+        setCook({ ...res.data });
       })
       .catch((error) => {
         console.log("error is", error);

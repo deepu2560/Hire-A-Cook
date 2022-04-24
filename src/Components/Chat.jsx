@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import socketio from "socket.io-client";
 import "../Styles/Chatstyles.css";
 const SERVER = "https://hire-cook-chatbot.herokuapp.com/";
+
 export const Chat = () => {
   var socket = socketio.connect(SERVER);
   const [text, setText] = useState([]);

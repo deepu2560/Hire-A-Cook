@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { SignupDispatch } from "../Redux/Signup/action";
+
 function Copyright(props) {
   return (
     <Typography
@@ -34,7 +35,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignInSide() {
+export const SignUpSide = () => {
   const { loading, error } = useSelector((state) => state.signup);
   const dispatch = useDispatch();
   const handleSubmit = (event) => {
@@ -181,4 +182,4 @@ export default function SignInSide() {
       </Grid>
     </ThemeProvider>
   );
-}
+};

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -35,7 +35,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignInSide() {
+export const SignInSide = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loading, user, error } = useSelector((state) => state.login);
@@ -148,4 +148,4 @@ export default function SignInSide() {
       </Grid>
     </ThemeProvider>
   );
-}
+};
