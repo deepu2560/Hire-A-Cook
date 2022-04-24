@@ -8,7 +8,7 @@ export const Chat = () => {
   const [text, setText] = useState([]);
   const [messages, setMessages] = useState([]);
   const handleChange = (e) => {
-    const { id, value } = e.target;
+    const { value } = e.target;
     setText(value);
   };
   const handleSubmit = (e) => {
@@ -21,7 +21,7 @@ export const Chat = () => {
   });
   useEffect(() => {
     setTimeout(() => {
-      if (messages.length % 2 == 1) {
+      if (messages.length % 2 === 1) {
         setMessages([
           ...messages,
           "Hello! Our team member will contact. Till then explore our website. Message by: cookBot",

@@ -23,7 +23,7 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      {"Copyright © "}
+      {/* {"Copyright © "} */}
       {/* <Link color="inherit" href="https://mui.com/">
         Your Website
       </Link>{' '} */}

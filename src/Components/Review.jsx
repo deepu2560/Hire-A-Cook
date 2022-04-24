@@ -7,7 +7,6 @@ import Grid from "@mui/material/Grid";
 import { useSelector } from "react-redux";
 
 export default function Review() {
-  const products = [];
   const Cookname = useSelector((store) => store.booking);
   console.log(Cookname);
   return (

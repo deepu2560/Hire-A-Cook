@@ -1,8 +1,5 @@
 import React from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import GoogleIcon from "@mui/icons-material/Google";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import "../Styles/Footer.css";
 
 export const Footer = () => {
@@ -81,18 +78,6 @@ export const Footer = () => {
                     <kbd> javascript</kbd>,<kbd> CSS</kbd>
                   </p>
                 </div>
-                <div className="footer-social-icon">
-                  <span>Follow us</span>
-                  <a href="#">
-                    <FacebookIcon sx={{ color: "#3b5998", fontSize: "50px" }} />
-                  </a>
-                  <a href="#">
-                    <TwitterIcon sx={{ color: "#55acee", fontSize: "50px" }} />
-                  </a>
-                  <a href="#">
-                    <GoogleIcon sx={{ color: "#dd4b39", fontSize: "50px" }} />
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -107,27 +92,6 @@ export const Footer = () => {
                   Copyright &copy; {new Date().getFullYear()}, All Right
                   Reserved
                 </p>
-              </div>
-            </div>
-            <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-              <div className="footer-menu">
-                <ul className={"footerul"}>
-                  <li>
-                    <a href="#">Home</a>
-                  </li>
-                  <li>
-                    <a href="#">Terms</a>
-                  </li>
-                  <li>
-                    <a href="#">Privacy</a>
-                  </li>
-                  <li>
-                    <a href="#">Policy</a>
-                  </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
