@@ -70,11 +70,15 @@ export const Footer = () => {
               <div className="footer-widget">
                 <div className="footer-text">
                   <p>
-                    This is a hackathon project. Team members name :- 
-                    <kbd> Deepanshu Gulia</kbd>, 
-                    <kbd> Anand S Holla</kbd>, 
-                    <kbd> Siddalinga Koudi</kbd>, 
-                    <kbd> Gollu Megha Shyam</kbd>
+                    This is a hackathon project. <br /> Team members name :-
+                    <kbd> Deepanshu Gulia</kbd>,<kbd> Anand S Holla</kbd>,
+                    <kbd> Siddalinga Koudi</kbd>,<kbd> Gollu Megha Shyam</kbd>
+                    <br />
+                    Tech stack :-
+                    <kbd> React</kbd>,<kbd> Redux</kbd>,<kbd> Material UI</kbd>,
+                    <kbd> MongoDB</kbd>,<kbd> Express</kbd>,
+                    <kbd> Socket.io</kbd>,<kbd> Heroku</kbd>,<kbd> Vercel</kbd>,
+                    <kbd> javascript</kbd>,<kbd> CSS</kbd>
                   </p>
                 </div>
                 <div className="footer-social-icon">

@@ -16,20 +16,20 @@ import AddressForm from "./Address";
 import PaymentForm from "./Payment";
 import Review from "./Review";
 import { useSelector } from "react-redux";
-import { Navigate,useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center">
+//       {"Copyright © "}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{" "}
+//       {new Date().getFullYear()}
+//       {"."}
+//     </Typography>
+//   );
+// }
 
 const steps = ["Billing address", "Payment details", "Review your order"];
 
@@ -50,7 +50,7 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const isAuth = useSelector((store) => store.login.isAuthenticated);
   // const navigate = useNavigate();
   // const cookname = useSelector()
@@ -103,17 +103,16 @@ export default function Checkout() {
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                Thankyou for Booking on Hire Chef
+                  Thankyou for Booking on Hire Chef
                 </Typography>
                 <Button
-                    variant="contained"
-                    onClick={()=>navigate("/")}
-                    sx={{ mt: 3, ml: 1 }}
-                  >
-                    Go Back To Home
-                  </Button>
-                <Typography variant="subtitle1">
-                </Typography>
+                  variant="contained"
+                  onClick={() => navigate("/")}
+                  sx={{ mt: 3, ml: 1 }}
+                >
+                  Go Back To Home
+                </Button>
+                <Typography variant="subtitle1"></Typography>
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -137,7 +136,7 @@ export default function Checkout() {
             )}
           </React.Fragment>
         </Paper>
-        <Copyright />
+        {/* <Copyright /> */}
       </Container>
     </ThemeProvider>
   );
