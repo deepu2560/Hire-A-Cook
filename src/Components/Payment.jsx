@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-function PaymentForm() {
+export const PaymentForm = () => {
   return (
     <div>
       <Typography variant="h6" gutterBottom>
@@ -63,6 +63,4 @@ function PaymentForm() {
       </Grid>
     </div>
   );
-}
-
-export default PaymentForm;
+};

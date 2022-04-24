@@ -6,7 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
 import { useSelector } from "react-redux";
 
-function Review() {
+export const Review = () => {
   const Cookname = useSelector((store) => store.booking);
   // console.log(Cookname);
   return (
@@ -36,6 +36,4 @@ function Review() {
       </Grid>
     </div>
   );
-}
-
-export default Review;
+};

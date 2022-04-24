@@ -17,19 +17,21 @@ import { SignupDispatch } from "../Redux/Signup/action";
 
 function Copyright(props) {
   return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {/* {'Copyright © '} */}
-      {/* <Link color="inherit" href="https://mui.com/">
+    <div>
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        align="center"
+        {...props}
+      >
+        {/* {'Copyright © '} */}
+        {/* <Link color="inherit" href="https://mui.com/">
         Your Website
       </Link> */}{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
+    </div>
   );
 }
 

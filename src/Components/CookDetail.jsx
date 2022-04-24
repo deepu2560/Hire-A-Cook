@@ -70,7 +70,7 @@ export const Cooks = () => {
   };
 
   return (
-    <>
+    <div>
       <div
         style={{
           border: "1px solid transparent",
@@ -241,7 +241,7 @@ export const Cooks = () => {
           Next Page
         </Button>
       </div>
-    </>
+    </div>
   );
 };
 

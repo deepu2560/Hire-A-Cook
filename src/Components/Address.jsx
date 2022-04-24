@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-function AddressForm() {
+export const AddressForm = () => {
   return (
     <div>
       <Typography variant="h6" gutterBottom>
@@ -108,6 +108,4 @@ function AddressForm() {
       </Grid>
     </div>
   );
-}
-
-export default AddressForm;
+};
